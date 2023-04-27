@@ -1,40 +1,18 @@
-const balancedBrackets = require('./challenge')
+const Stack = require('./challenge')
 const assert = require('assert')
 
-describe('Tests', function () {
-  it('balanced_parenthesis_and_square_brackets', function () {
+describe('Tests', function () { 
+  it('min_method_works', function () {
     // Failure message: 
-    // Method called: balancedBrackets('(hello)[world]')
-    assert(balancedBrackets('(hello)[world]') === true)
-  })
-  
-  it('balanced_brackets', function () {
-    // Failure message: 
-    // Method called: balancedBrackets('{}')
-    assert(balancedBrackets('{}') === true)
-  })
-  
-  it('nested_balanced_brackets', function () {
-    // Failure message: 
-    // Method called: balancedBrackets('[({}{}{})([])]')
-    assert(balancedBrackets('[({}{}{})([])]') === true)
-  })
+    // This is order of method calls: push(5) -> min -> push(3) -> min -> pop -> min
+    const stack = new Stack()
+    stack.push(5)
+    assert(stack.min() === 5)
 
-  it('unbalanced_with_no_closing', function () {
-    // Failure message: 
-    // Method called: balancedBrackets('(hello')
-    assert(balancedBrackets('(hello') === false)
-  })
+    stack.push(3)
+    assert(stack.min() === 3)
 
-  it('unbalanced_incorrect_nesting', function () {
-    // Failure message: 
-    // Method called: balancedBrackets('([)]')
-    assert(balancedBrackets('([)]') === false)
-  })
-
-  it('unbalanced_closing_before_opening', function () {
-    // Failure message: 
-    // Method called: balancedBrackets(')(')
-    assert(balancedBrackets(')(') === false)
+    stack.pop()
+    assert(stack.min() === 5)
   })
 })

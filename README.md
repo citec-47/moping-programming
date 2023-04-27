@@ -9,37 +9,45 @@
 
 ## Challenge description
 
-### Balanced Brackets
 
-There are 3 kinds of Brackets: [] {} (). Given a String  of characters, check if all the brackets in the String are Balanced. A  string is balanced if all the start and end brackets are in a correct  order so they match each other.
-Here are some balanced Strings:
+### Min Stack
+Create a Stack that contains the standard push and pop methods. It should also contain another method min that returns the minimum number in the Stack.
 
-- {}
-- (hello)[world]
-- [({}{}{})([])]
+#### Extra Credit
 
-Here are some Unbalanced ones:
+All operations should take O(1) time.
 
-- (hello - no ending )
-- ([)] - The [ is improperly enclosed in the ().
-- )( - There's an ending ) without a ( before it.
+#### Example
 
-Return true if a line is balanced and false otherwise.
+This is an example of a test case:
 
-#### Examples
-
-The following are 3 test cases:
-
-```js
-console.log(balanced_brackets?('(hello)[world]'))
-// => true
-
-console.log(balanced_brackets?('([)]'))
-// => false
-
-console.log(balanced_brackets?('[({}{}{})([])]'))
-// => true
 ```
+const stack = new Stack()
+
+stack.push(3)
+stack.push(5)
+console.log(stack.min())
+// => 3
+
+stack.pop
+stack.push(7)
+console.log(stack.min())
+// => 3
+
+stack.push(2)
+console.log(stack.min())
+// => 2
+
+stack.pop
+console.log(stack.min())
+// => 3
+
+```
+
+Get stuck and need some hint?
+Check below link: 
+
+*https://gitlab.com/microverse/guides/coding_challenges/hints/blob/master/challenges/basic-data-structures/min-stack.md*
 
 
 ### Troubleshooting
